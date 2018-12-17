@@ -1,0 +1,141 @@
+2018/12/10 10:16:13 [emerg] 6864#5452: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:18:14 [emerg] 6728#2136: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:21:00 [emerg] 4236#2440: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:23:01 [emerg] 7732#7736: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:23:12 [emerg] 7992#7996: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:26:36 [emerg] 6888#6656: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:26:50 [emerg] 7852#7836: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:28:41 [emerg] 2504#5144: CreateFile() "C:\Users\Administrator\Desktop\新建文件夹\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2018/12/10 10:31:09 [emerg] 7916#3836: CreateFile() "C:/nginx-1.15.2/conf/nginx.conf" failed (3: The system cannot find the path specified)
+2018/12/10 10:36:32 [error] 6052#8024: *1 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 10:39:31 [notice] 5548#3704: signal process started
+2018/12/10 10:39:57 [notice] 7676#7784: signal process started
+2018/12/10 10:40:16 [error] 7752#7344: *8 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:12345", referrer: "http://localhost:12345/"
+2018/12/10 10:42:51 [notice] 6452#7860: signal process started
+2018/12/10 10:48:02 [emerg] 4824#2528: unexpected "}" in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:37
+2018/12/10 10:48:27 [notice] 7548#7984: signal process started
+2018/12/10 10:52:56 [notice] 4736#2252: signal process started
+2018/12/10 10:53:05 [crit] 2120#5572: *28 GetFileAttributesEx() "C:\Users\Administrator\Desktop
+ew
+ginx
+ginx-1.15.7
+ginx-1.15.7>static\img" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:53:18 [crit] 2120#5572: *32 CreateFile() "C:\Users\Administrator\Desktop
+ew
+ginx
+ginx-1.15.7
+ginx-1.15.7>static\img/aaa.png" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET /aaa.png HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:54:09 [notice] 2944#5492: signal process started
+2018/12/10 10:54:14 [crit] 6280#7936: *34 CreateFile() "C:\Users\Administrator\Desktop
+ew
+ginx
+ginx-1.15.7
+ginx-1.15.7\static\img/aaa.png" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET /aaa.png HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:54:17 [crit] 6280#7936: *35 GetFileAttributesEx() "C:\Users\Administrator\Desktop
+ew
+ginx
+ginx-1.15.7
+ginx-1.15.7\static\img" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:55:08 [notice] 6552#7956: signal process started
+2018/12/10 10:55:15 [crit] 7596#6276: *36 GetFileAttributesEx() "C:\Users\Administrator\Desktop
+ew
+ginx
+ginx-1.15.7
+ginx-1.15.7\static" failed (123: The filename, directory name, or volume label syntax is incorrect), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:56:00 [notice] 6700#5744: signal process started
+2018/12/10 10:56:04 [error] 7984#7480: *38 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:56:06 [error] 7984#7480: *38 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:56:07 [error] 7984#7480: *38 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:56:16 [error] 7984#7480: *38 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:56:16 [error] 7984#7480: *38 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 10:56:26 [error] 7984#7480: *38 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET /img/ HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:57:00 [error] 7984#7480: *38 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/index.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /index.html HTTP/1.1", host: "localhost:1234"
+2018/12/10 10:57:25 [notice] 8148#528: signal process started
+2018/12/10 10:57:29 [error] 7136#7956: *45 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/index.html" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /index.html HTTP/1.1", host: "localhost:1234"
+2018/12/10 11:01:21 [notice] 3620#3348: signal process started
+2018/12/10 11:02:40 [notice] 6188#7344: signal process started
+2018/12/10 11:02:48 [error] 7580#7252: *60 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.0", host: "tomcat_server"
+2018/12/10 11:04:06 [emerg] 7716#188: invalid port in "123456" of the "listen" directive in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:86
+2018/12/10 11:05:00 [notice] 7372#7816: signal process started
+2018/12/10 11:05:21 [error] 6636#7272: *68 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1996"
+2018/12/10 11:05:21 [error] 6636#7272: *68 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/"
+2018/12/10 11:05:56 [error] 6636#7272: *71 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 11:06:16 [error] 6636#7272: *83 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.0", host: "tomcat_server", referrer: "http://localhost:12345/"
+2018/12/10 11:09:56 [notice] 7784#7920: signal process started
+2018/12/10 11:10:31 [error] 7464#5456: *129 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 11:11:20 [notice] 7936#7956: signal process started
+2018/12/10 11:11:38 [error] 6280#6476: *134 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 11:12:31 [notice] 4856#7596: signal process started
+2018/12/10 11:12:39 [error] 4972#7268: *136 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 11:13:55 [emerg] 7432#332: host not found in upstream "koa" in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:101
+2018/12/10 11:14:18 [notice] 7944#6868: signal process started
+2018/12/10 11:14:55 [error] 2120#7820: *156 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/static/img/aaa.png"
+2018/12/10 11:19:30 [notice] 6100#6288: signal process started
+2018/12/10 11:21:06 [notice] 3056#6384: signal process started
+2018/12/10 11:21:06 [error] 3056#6384: CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/logs/nginx.pid" failed (2: The system cannot find the file specified)
+2018/12/10 11:43:36 [error] 7272#6628: *4 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 11:56:34 [notice] 8820#7896: signal process started
+2018/12/10 14:35:05 [notice] 6616#6660: signal process started
+2018/12/10 14:40:25 [error] 2952#6044: *1 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/html/"
+2018/12/10 14:40:59 [notice] 7532#7536: signal process started
+2018/12/10 14:41:04 [error] 7556#7232: *6 "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/html/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /html/ HTTP/1.1", host: "localhost:1996"
+2018/12/10 14:59:24 [error] 7556#7232: *11 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/api/seller" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/seller HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/client/"
+2018/12/10 14:59:24 [error] 7556#7232: *11 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/api/goods" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/goods HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/client/"
+2018/12/10 15:16:11 [error] 7556#7232: *17 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/books-app" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /books-app HTTP/1.1", host: "localhost:1996"
+2018/12/10 15:16:15 [error] 7556#7232: *17 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/book-app" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /book-app HTTP/1.1", host: "localhost:1996"
+2018/12/10 15:16:29 [error] 7556#7232: *17 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/elm-app" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /elm-app HTTP/1.1", host: "localhost:1996"
+2018/12/10 15:16:45 [notice] 8048#7656: signal process started
+2018/12/10 15:16:56 [error] 7068#9012: *24 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/api/seller" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/seller HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/client/elm-app/"
+2018/12/10 15:16:56 [error] 7068#9012: *24 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/api/goods" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/goods HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/client/elm-app/"
+2018/12/10 15:21:49 [notice] 3152#7988: signal process started
+2018/12/10 15:29:39 [error] 8612#6728: *44 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 15:29:46 [error] 8612#6728: *44 CreateFile() "C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 15:30:54 [error] 8612#6728: *46 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", upstream: "http://[::1]:1234/", host: "localhost:12345"
+2018/12/10 15:33:35 [emerg] 2520#8204: invalid host in upstream "localhost:1996/boos-app" in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:42
+2018/12/10 15:34:09 [emerg] 8520#9056: invalid host in upstream "localhost:1996/books-app" in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:42
+2018/12/10 15:37:05 [notice] 7400#6620: signal process started
+2018/12/10 15:37:29 [error] 6044#4584: *63 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/static/js/manifest.210522c5bb3e6d8cc5c3.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/manifest.210522c5bb3e6d8cc5c3.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:37:37 [error] 6044#4584: *75 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/static/js/vendor.f757fdfc04444e4527ad.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/vendor.f757fdfc04444e4527ad.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:37:55 [error] 6044#4584: *78 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/"
+2018/12/10 15:38:00 [error] 6044#4584: *84 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1997", referrer: "http://localhost:1997/"
+2018/12/10 15:38:58 [notice] 5284#9168: signal process started
+2018/12/10 15:39:01 [error] 7472#3864: *91 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/api/seller" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/seller HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/"
+2018/12/10 15:39:01 [error] 7472#3864: *89 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/api/goods" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/goods HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/"
+2018/12/10 15:39:12 [error] 7472#3864: *107 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/static/js/manifest.210522c5bb3e6d8cc5c3.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/manifest.210522c5bb3e6d8cc5c3.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:39:31 [error] 7472#3864: *125 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/js/manifest.a6de80c6b1479479c620.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/manifest.a6de80c6b1479479c620.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:39:31 [error] 7472#3864: *127 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/js/vendor.a135f479cdd8dedb65c5.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/vendor.a135f479cdd8dedb65c5.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *114 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: koa1_server, request: "GET /static/css/reset.css HTTP/1.1", upstream: "http://[::1]:1996/static/css/reset.css", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *118 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: koa1_server, request: "GET /static/css/app.d3c1b4e85d27593c3074e43774087566.css HTTP/1.1", upstream: "http://[::1]:1997/static/css/app.d3c1b4e85d27593c3074e43774087566.css", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *134 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/css/app.d3c1b4e85d27593c3074e43774087566.css" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/css/app.d3c1b4e85d27593c3074e43774087566.css HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *119 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: koa1_server, request: "GET /static/js/app.47be67ec6acfd5223609.js HTTP/1.1", upstream: "http://[::1]:1997/static/js/app.47be67ec6acfd5223609.js", host: "localhost:1234", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *136 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/js/app.47be67ec6acfd5223609.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/app.47be67ec6acfd5223609.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *141 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/js/app.47be67ec6acfd5223609.js" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/app.47be67ec6acfd5223609.js HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:40:31 [error] 7472#3864: *142 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/books-app/static/js/vendor.a135f479cdd8dedb65c5.js.map" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /static/js/vendor.a135f479cdd8dedb65c5.js.map HTTP/1.0", host: "koa1_server"
+2018/12/10 15:40:31 [error] 7472#3864: *144 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/client/elm-app/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/10 15:40:45 [notice] 4984#1824: signal process started
+2018/12/10 15:40:46 [notice] 7712#8952: signal process started
+2018/12/10 15:40:48 [error] 6012#8664: *150 "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/aaa.png/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.0", host: "koa1_server"
+2018/12/10 15:40:58 [error] 6012#8664: *157 "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/aaa.png/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.0", host: "koa1_server"
+2018/12/10 15:41:08 [error] 6012#8664: *159 "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/aaa.png/index.html" is not found (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1997"
+2018/12/10 15:41:08 [error] 6012#8664: *159 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/aaa.png/favicon.ico" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1997", referrer: "http://localhost:1997/"
+2018/12/10 15:41:53 [notice] 7484#8028: signal process started
+2018/12/10 15:41:56 [error] 4412#1524: *165 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1997"
+2018/12/10 15:42:28 [error] 4412#1524: *165 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1997"
+2018/12/10 15:42:40 [notice] 7616#8764: signal process started
+2018/12/10 15:43:06 [notice] 8924#6180: signal process started
+2018/12/14 15:26:48 [error] 7692#7008: *51 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.0", host: "koa1_server", referrer: "http://localhost:1234/"
+2018/12/14 15:28:08 [error] 7692#7008: *54 upstream timed out (10060: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond) while connecting to upstream, client: 127.0.0.1, server: koa1_server, request: "GET / HTTP/1.1", upstream: "http://[::1]:1996/", host: "localhost:1234"
+2018/12/14 15:35:52 [notice] 10692#9056: signal process started
+2018/12/17 10:09:36 [notice] 9200#6084: signal process started
+2018/12/17 10:09:53 [error] 5392#8956: *7 directory index of "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/" is forbidden, client: 127.0.0.1, server: localhost, request: "GET / HTTP/1.1", host: "localhost:1997"
+2018/12/17 10:09:53 [error] 5392#8956: *7 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/static/img/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1997", referrer: "http://localhost:1997/"
+2018/12/17 10:11:05 [notice] 7820#4892: signal process started
+2018/12/17 11:01:56 [notice] 6360#9036: signal process started
+2018/12/17 11:02:00 [error] 6104#8736: *3 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/dist/"
+2018/12/17 11:02:58 [error] 6104#8736: *2 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/api/about" failed (3: The system cannot find the path specified), client: 127.0.0.1, server: localhost, request: "GET /api/about HTTP/1.1", host: "localhost:1996", referrer: "http://localhost:1996/dist/"
+2018/12/17 11:07:32 [emerg] 4644#6956: unexpected end of file, expecting "}" in C:\Users\Administrator\Desktop\new\nginx\nginx-1.15.7\nginx-1.15.7/conf/nginx.conf:193
+2018/12/17 11:07:49 [notice] 7252#3676: signal process started
+2018/12/17 11:08:27 [notice] 8812#6752: signal process started
+2018/12/17 11:09:13 [error] 6612#6700: *41 CreateFile() "C:/Users/Administrator/Desktop/new/nginx/nginx-1.15.7/nginx-1.15.7/html/distfavicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /distfavicon.ico HTTP/1.0", host: "localhost:1996", referrer: "http://localhost:3003/apis"
+2018/12/17 11:10:36 [notice] 6404#6932: signal process started
+2018/12/17 11:16:14 [notice] 124#2132: signal process started
