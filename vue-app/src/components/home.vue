@@ -24,6 +24,9 @@ export default {
   },
   methods: {
      touchEnd(e) {
+       if (!this.isMoving) {
+         return
+       }
       if (this.EndClientX - this.startClientX > 100) {
         this.openPage('/index/home')
       } else if (this.EndClientX - this.startClientX < -100){
@@ -31,8 +34,10 @@ export default {
       } else {
         console.log('无操作')
       }
+      this.isMoving = true
     },
     touchMove(e) {
+      this.isMoving = true
        this.EndClientX = e.touches[0].clientX
       // console.info(e.touches[0],'Move')
 

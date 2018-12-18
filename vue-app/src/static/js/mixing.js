@@ -23,7 +23,7 @@ export const routerTransitionMode = {
     },
     backPage() {
       this.Set_mode(false);
-      this.$rouer.back()
+      this.$router.back()
     },
     ...mapMutations({
       Set_mode: "SET_PLAY_MODE",
