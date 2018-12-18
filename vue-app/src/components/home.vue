@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" @touchstart="touchStart" @touchmove="touchMove" @touchend.stop="touchEnd">
     <h1>{{msg}}</h1>
     <cube-button @click="showDefault">操作列表</cube-button>
   </div>
@@ -13,13 +13,34 @@ export default {
   data() {
     return {
       msg: "Welcome to Your Vue.js App this is Page home",
-      toastTxt: "cube toast content"
+      toastTxt: "cube toast content",
+      startClientX: 0,
+      EndClientX: 0,
+      isMoving: false
     };
   },
   mounted() {
     this.getData();
   },
   methods: {
+     touchEnd(e) {
+      if (this.EndClientX - this.startClientX > 100) {
+        this.openPage('/index/home')
+      } else if (this.EndClientX - this.startClientX < -100){
+       this.openPage('/index/like')
+      } else {
+        console.log('无操作')
+      }
+    },
+    touchMove(e) {
+       this.EndClientX = e.touches[0].clientX
+      // console.info(e.touches[0],'Move')
+
+    },
+    touchStart(e) {
+      this.startClientX = e.touches[0].clientX
+      // console.info(e.touches[0],'start')
+    },
     showDefault() {
       this.$createActionSheet({
         title: "打开页面",

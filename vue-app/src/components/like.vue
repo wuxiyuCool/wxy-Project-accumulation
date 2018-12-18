@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="hello" @touchstart="touchStart" @touchmove="touchMove" @touchend.stop="touchEnd">
       <h1>
           {{msg}}
       </h1>
@@ -22,6 +22,24 @@ export default {
     this.getData();
   },
   methods: {
+     touchEnd(e) {
+      if (this.EndClientX - this.startClientX > 100) {
+        this.openPage('/index/home')
+      } else if (this.EndClientX - this.startClientX < -100){
+       this.openPage('/index/vip')
+      } else {
+        console.log('无操作')
+      }
+    },
+    touchMove(e) {
+      this.EndClientX = e.touches[0].clientX
+      // console.info(e.touches[0].clientX,'Move')
+
+    },
+    touchStart(e) {
+     this.startClientX = e.touches[0].clientX
+      // console.info(e.touches[0].clientX,'start')
+    },
     showDefault() {
       this.$createActionSheet({
         title: "打开页面",

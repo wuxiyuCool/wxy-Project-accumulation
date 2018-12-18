@@ -26,7 +26,8 @@ export const routerTransitionMode = {
       this.$rouer.back()
     },
     ...mapMutations({
-      Set_mode: "SET_PLAY_MODE"
+      Set_mode: "SET_PLAY_MODE",
+      Set_label: 'SET_LABEL_DEFAULT'
     })
   }
 }

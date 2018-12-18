@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" style="background: skyblue">
+  <div class="hello" style="background: skyblue" @touchstart="touchStart" @touchmove="touchMove" @touchend.stop="touchEnd">
       <h1>
           {{msg}}
       </h1>
@@ -20,6 +20,24 @@ export default {
     };
   },
   methods: {
+     touchEnd(e) {
+      if (this.EndClientX - this.startClientX > 100) {
+        this.openPage('/index/like')
+      } else if (this.EndClientX - this.startClientX < -100){
+       this.openPage('/index/me')
+      } else {
+        console.log('无操作')
+      }
+    },
+    touchMove(e) {
+      this.EndClientX = e.touches[0].clientX
+      // console.info(e.touches[0].clientX,'Move')
+
+    },
+    touchStart(e) {
+     this.startClientX = e.touches[0].clientX
+      // console.info(e.touches[0].clientX,'start')
+    },
     showDefault() {
       this.$createActionSheet({
         title: "打开页面",

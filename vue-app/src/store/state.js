@@ -1,5 +1,5 @@
 const state = {
     mode: false,
-    mode1: false
+    LabelDefault: 'Home'
   }
   export default state

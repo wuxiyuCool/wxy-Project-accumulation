@@ -16,38 +16,49 @@ export default {
   name: "tabs",
   data() {
     return {
-      selectedLabelDefault: "Home",
+      selectedLabelDefault: "home",
       tabs: [
         {
-          label: "Home",
+          label: "home",
           icon: "cubeic-home"
         },
         {
-          label: "Like",
+          label: "like",
           icon: "cubeic-like"
         },
         {
-          label: "Vip",
+          label: "vip",
           icon: "cubeic-vip"
         },
         {
-          label: "Me",
+          label: "me",
           icon: "cubeic-person"
         }
       ]
     };
   },
+  watch: {
+    routerPath(val, old) {
+      this.selectedLabelDefault = val
+    }
+  },
+  computed: {
+    routerPath() {
+      const path = this.$route.path.split("/")[2];
+      return path;
+    }
+  },
   mounted() {
     // tabs组件绑定路由地址
-    this.selectedLabelDefault = this.$route.path.split('/')[2]
+    this.selectedLabelDefault = this.routerPath;
   },
   methods: {
     clickHandler(label) {
       // if you clicked home tab, then print 'Home'
       console.log(label);
       this.$router.push({
-          path: `/index/${label}`
-      })
+        path: `/index/${label}`
+      });
     },
     changeHandler(label) {
       // if you clicked different tab, this methods can be emitted

@@ -3,8 +3,8 @@ const matutaions = {
   [types.SET_PLAY_MODE](state, mode) {
     state.mode = mode
   },
-  [types.SET_PLAY_MODE1](state, mode) {
-    state.mode1 = mode1
+  [types.SET_LABEL_DEFAULT](state, LabelDefault) {
+    state.LabelDefault = LabelDefault
   },
 }
 export default matutaions
