@@ -49,7 +49,7 @@ export default {
          return
        }
       if (this.EndClient.clientX - this.startClient.clientX > 150) {
-        this.openPage('/index/home')
+        this.$emit('openNav', 'true')
       } else if (this.EndClient.clientX - this.startClient.clientX < -150){
        this.openPage('/index/like')
       } else {
