@@ -39,7 +39,7 @@ export default {
   },
   watch: {
     routerPath(val, old) {
-      this.selectedLabelDefault = val
+      this.selectedLabelDefault = val || 'home'
     }
   },
   computed: {

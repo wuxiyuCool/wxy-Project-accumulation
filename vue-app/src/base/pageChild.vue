@@ -2,14 +2,15 @@
   <div class="Page">
     <Vheader :title="title"></Vheader>
     <div class="scrollContaint">
-        <cube-scroll ref="scroll" :data="data" >
+        <Scroll ref="scroll" :data="data" >
             <slot></slot>
-        </cube-scroll>
+        </Scroll>
     </div>
   </div>
 </template>
 <script>
 import Vheader from '@/base/header'
+import Scroll from '@/base/scroll'
 export default {
   props: {
     data: {
@@ -22,7 +23,8 @@ export default {
     }
   },
   components: {
-    Vheader
+    Vheader,
+    Scroll
   }
 };
 </script>
