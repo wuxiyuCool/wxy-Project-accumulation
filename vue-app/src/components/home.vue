@@ -1,6 +1,6 @@
 <template>
   <div class="hello" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
-    <div class="banner-warrper"  @touchstart.stop="" > 
+    <div class="banner-warrper"  @touchstart.stop="sliderTouch" > 
        <cube-slide  :data="items" :threshold="0.3"></cube-slide>
     </div>
       <div style="height: 1000px;background: skyblue;">
@@ -34,9 +34,10 @@ export default {
           image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide03.png'
         }
       ],
-      startClientX: 0,
-      EndClientX: 0,
-      isMoving: false
+      startClient: 0,
+      EndClient: 0,
+      isMoving: false,
+      isTouchSlider: false
     };
   },
   mounted() {
@@ -47,24 +48,29 @@ export default {
        if (!this.isMoving) {
          return
        }
-      if (this.EndClientX - this.startClientX > 150) {
+      if (this.EndClient.clientX - this.startClient.clientX > 150) {
         this.openPage('/index/home')
-      } else if (this.EndClientX - this.startClientX < -150){
+      } else if (this.EndClient.clientX - this.startClient.clientX < -150){
        this.openPage('/index/like')
       } else {
         console.log('无操作')
       }
-      this.isMoving = true
+      this.isMoving = false
     },
     touchMove(e) {
-      this.isMoving = true
-       this.EndClientX = e.touches[0].clientX
+      // this.isMoving = true
+       this.EndClient = e.touches[0]
+       
       // console.info(e.touches[0],'Move')
 
     },
     touchStart(e) {
-      this.startClientX = e.touches[0].clientX
+      this.isMoving = true
+      this.startClient = e.touches[0]
       // console.info(e.touches[0],'start')
+    },
+    sliderTouch() {
+      this.isMoving = false
     },
     showDefault() {
       this.$createActionSheet({
