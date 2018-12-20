@@ -45,6 +45,7 @@ export default {
   computed: {
     routerPath() {
       const path = this.$route.path.split("/")[2];
+      console.log(path)
       return path;
     }
   },

@@ -26,6 +26,14 @@ export default {
       isMoving: false
     };
   },
+  async mounted () {
+    const url = this.LocationUrl + "/token?user=wxy";
+    let parmas = {
+      userName: '222'
+    }
+    const data = (await this.axios.get(url)).data
+    console.log(data)
+  },
   methods: {
     touchEnd(e) {
       if (!this.isMoving) {

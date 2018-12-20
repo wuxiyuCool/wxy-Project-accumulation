@@ -14,7 +14,7 @@ export default new Router({
   routes: [
     {
       path:'/',
-      redirect:'/index/Home'
+      redirect:'/index/home'
     },
     {
       path: '/index',
@@ -30,7 +30,7 @@ export default new Router({
           component: vip
         },
         {
-          path: '/index/Home',
+          path: '/index/home',
           component: home
         },
         {

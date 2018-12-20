@@ -1,18 +1,20 @@
 <template>
   <div class="hello" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
-    <div class="banner-warrper"  @touchstart.stop="sliderTouch" > 
-       <cube-slide  :data="items" :threshold="0.3"></cube-slide>
+    <div class="banner-warrper" @touchstart.stop="sliderTouch">
+      <cube-slide :data="items" :threshold="0.3"></cube-slide>
     </div>
-      <div style="height: 1000px;background: skyblue;">
-        <h1>{{msg}}</h1>
+    <div style="height: 1000px;background: skyblue;">
+      <h1>{{msg}}</h1>
       <cube-button @click="showDefault">操作列表</cube-button>
-      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import { routerTransitionMode } from "@/static/js/mixing";
-import Scroll from '@/base/scroll'
+import localStorage from "localStorage"
+import qs from "qs";
+import Scroll from "@/base/scroll";
 export default {
   name: "home",
   mixins: [routerTransitionMode],
@@ -20,18 +22,21 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App this is Page home",
       toastTxt: "cube toast content",
-       items: [
+      items: [
         {
-          url: 'http://www.didichuxing.com/',
-          image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide01.png'
+          url: "http://www.didichuxing.com/",
+          image:
+            "//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide01.png"
         },
         {
-          url: 'http://www.didichuxing.com/',
-          image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide02.png'
+          url: "http://www.didichuxing.com/",
+          image:
+            "//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide02.png"
         },
         {
-          url: 'http://www.didichuxing.com/',
-          image: '//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide03.png'
+          url: "http://www.didichuxing.com/",
+          image:
+            "//webapp.didistatic.com/static/webapp/shield/cube-ui-examples-slide03.png"
         }
       ],
       startClient: 0,
@@ -44,33 +49,32 @@ export default {
     this.getData();
   },
   methods: {
-     touchEnd(e) {
-       if (!this.isMoving) {
-         return
-       }
-      if (this.EndClient.clientX - this.startClient.clientX > 150) {
-        this.$emit('openNav', 'true')
-      } else if (this.EndClient.clientX - this.startClient.clientX < -150){
-       this.openPage('/index/like')
-      } else {
-        console.log('无操作')
+    touchEnd(e) {
+      if (!this.isMoving) {
+        return;
       }
-      this.isMoving = false
+      if (this.EndClient.clientX - this.startClient.clientX > 150) {
+        this.$emit("openNav", "true");
+      } else if (this.EndClient.clientX - this.startClient.clientX < -150) {
+        this.openPage("/index/like");
+      } else {
+        console.log("无操作");
+      }
+      this.isMoving = false;
     },
     touchMove(e) {
       // this.isMoving = true
-       this.EndClient = e.touches[0]
-       
-      // console.info(e.touches[0],'Move')
+      this.EndClient = e.touches[0];
 
+      // console.info(e.touches[0],'Move')
     },
     touchStart(e) {
-      this.isMoving = true
-      this.startClient = e.touches[0]
+      this.isMoving = true;
+      this.startClient = e.touches[0];
       // console.info(e.touches[0],'start')
     },
     sliderTouch() {
-      this.isMoving = false
+      this.isMoving = false;
     },
     showDefault() {
       this.$createActionSheet({
@@ -106,9 +110,20 @@ export default {
       }).show();
     },
     async getData() {
-      const url = this.LocationUrl + '/'
-      const data = (await this.axios.get(url)).data
-      console.log(data)
+      const url = this.LocationUrl + "/token";
+      // var params = new URLSearchParams();
+      // params.append('name', 'wxy');
+      let postData = qs.stringify({
+        name: "wxy"
+      });
+      // const data = (await this.axios.post(url,params)).data
+      const data = (await this.axios.post(url, postData)).data;
+      console.log(data);
+      localStorage.setItem('myKey', data.token);
+      console.log(data.token)
+      const myKey = localStorage.getItem('myKey');
+      console.log(myKey)
+
     }
   },
   components: {
@@ -119,13 +134,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
 .hello {
   background: #ccc;
   height: 93vh;
   overflow-y: auto;
 }
-.banner-warrper{
+.banner-warrper {
   height: 80px;
   width: 100%;
 }

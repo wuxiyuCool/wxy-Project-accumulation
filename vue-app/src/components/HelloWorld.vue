@@ -25,7 +25,7 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App",
       toastTxt: "cube toast content",
-      isShowNav: true
+      isShowNav: false
     };
   },
   methods: {
@@ -166,7 +166,7 @@ export default {
 
     .nav {
       height: 100%;
-      width: 60%;
+      width: 70%;
       background: #fff;
     }
   }
