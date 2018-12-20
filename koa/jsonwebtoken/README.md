@@ -9,7 +9,14 @@
 - iat (Issued At)：签发时间
 - jti (JWT ID)：编号
 >
-#2 一般使用方法
+```
+  {
+    "sub": "1234567890",
+    "name": "wxy",
+    "admin": true
+  }
+```
+# 2 一般使用方法
 ---
 **客户端收到服务器返回的 JWT，可以储存在 Cookie 里面，也可以储存在 localStorage。此后，客户端每次与服务器通信，都要带上这个 JWT。你可以把它放在 Cookie 里面自动发送，但是这样不能跨域，所以更好的做法是放在 HTTP 请求的头信息Authorization字段里面**
 >
