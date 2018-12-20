@@ -37,7 +37,7 @@ const privateKey = fs.readFileSync('./config/private.key')
 // openssl rsa -in private.key(基于这个私钥) -pubout -outform PEM -out public.key（公钥名称） 生成公钥
 
 const payload = {
-    name: 'wanghao',
+    name: 'wxy',
     admin: true,
 
   }
