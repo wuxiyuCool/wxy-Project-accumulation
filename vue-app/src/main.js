@@ -97,11 +97,7 @@ Vue.use(ScrollNavBar)
 Vue.use(RecycleList)
 
 Vue.config.productionTip = false
-if (process.env.NODE_ENV == "development") {
-  Vue.prototype.LocationUrl = Vue.prototype.HOME
-} else {
-  Vue.prototype.LocationUrl = 'http://localhost:3003' + Vue.prototype.HOME
-}
+Vue.prototype.LocationUrl = process.env.baseUrl
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

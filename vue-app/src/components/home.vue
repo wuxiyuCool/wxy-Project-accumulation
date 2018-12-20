@@ -111,8 +111,6 @@ export default {
     },
     async getData() {
       const url = this.LocationUrl + "/token";
-      // var params = new URLSearchParams();
-      // params.append('name', 'wxy');
       let postData = qs.stringify({
         name: "wxy"
       });
