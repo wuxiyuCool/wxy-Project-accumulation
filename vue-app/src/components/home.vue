@@ -6,18 +6,19 @@
     <div style="height: 1000px;background: skyblue;">
       <h1>{{msg}}</h1>
       <cube-button @click="showDefault">操作列表</cube-button>
+      <cube-button @click="login">登录获取jwt</cube-button>
     </div>
   </div>
 </template>
 
 <script>
-import { routerTransitionMode } from "@/static/js/mixing";
-import localStorage from "localStorage"
-import qs from "qs";
+import { routerTransitionMode, jwt } from "@/static/js/mixing";
+import localStorage from "localStorage";
+
 import Scroll from "@/base/scroll";
 export default {
   name: "home",
-  mixins: [routerTransitionMode],
+  mixins: [routerTransitionMode, jwt],
   data() {
     return {
       msg: "Welcome to Your Vue.js App this is Page home",
@@ -45,10 +46,12 @@ export default {
       isTouchSlider: false
     };
   },
-  mounted() {
-    this.getData();
-  },
+  mounted() {},
   methods: {
+    login() {
+      const data = this.getjwt();
+      this.setLocalStorage("myKey", data.token, new Date().getTime());
+    },
     touchEnd(e) {
       if (!this.isMoving) {
         return;
@@ -108,20 +111,6 @@ export default {
           }
         }
       }).show();
-    },
-    async getData() {
-      const url = this.LocationUrl + "/token";
-      let postData = qs.stringify({
-        name: "wxy"
-      });
-      // const data = (await this.axios.post(url,params)).data
-      const data = (await this.axios.post(url, postData)).data;
-      console.log(data);
-      localStorage.setItem('myKey', data.token);
-      console.log(data.token)
-      const myKey = localStorage.getItem('myKey');
-      console.log(myKey)
-
     }
   },
   components: {

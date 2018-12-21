@@ -12,11 +12,11 @@
 </template>
 
 <script>
-import { routerTransitionMode } from "@/static/js/mixing";
+import { routerTransitionMode, jwt } from "@/static/js/mixing";
 
 export default {
   name: "vip",
-  mixins: [routerTransitionMode],
+  mixins: [routerTransitionMode, jwt],
   data() {
     return {
       msg: "Welcome to Your Vue.js App this is page vip",
@@ -26,13 +26,10 @@ export default {
       isMoving: false
     };
   },
-  async mounted () {
-    const url = this.LocationUrl + "/token?user=wxy";
-    let parmas = {
-      userName: '222'
-    }
-    const data = (await this.axios.get(url)).data
-    console.log(data)
+  async mounted() {
+    const myKey = this.getLocalStorage("myKey", 4000);
+    const data = this.verifyJwt(myKey)
+    console.info(myKey);
   },
   methods: {
     touchEnd(e) {

@@ -56,7 +56,7 @@ import VueAxios from 'vue-axios'
 import localStorage from 'localStorage'
 
 Vue.use(VueAxios, axios)
-axios.defaults.headers.common['Authorization'] = localStorage.getItem('myKey')
+
 Vue.prototype.HOME = '/api'
 Vue.use(Button)
 Vue.use(Loading)
