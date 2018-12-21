@@ -51,7 +51,7 @@ export default {
     async login() {
       const data = await this.getjwt();
       console.info('home',data.token)
-      this.setLocalStorage("myKey", data.token, new Date().getTime());
+      this.setLocalStorage("myKey", data.token, 'jwtDate');
     },
     touchEnd(e) {
       if (!this.isMoving) {

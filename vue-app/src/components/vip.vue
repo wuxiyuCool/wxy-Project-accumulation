@@ -27,7 +27,7 @@ export default {
     };
   },
   async mounted() {
-    const data = this.verifyJwt()
+    const data = await this.verifyJwt()
   },
   methods: {
     touchEnd(e) {

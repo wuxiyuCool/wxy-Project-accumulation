@@ -21,7 +21,7 @@ export default {
     };
   },
   mounted(){
-    const mykey = this.getLocalStorage('myKey', 1000*60*60)
+    const mykey = this.getLocalStorage('myKey', 1000*60*60, 'jwtDate')
     console.info('APP mykey',mykey)
     if (mykey) {
       axios.defaults.headers.common['Authorization'] = mykey

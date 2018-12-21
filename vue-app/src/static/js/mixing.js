@@ -27,8 +27,8 @@ export const routerTransitionMode = {
       this.$router.back()
     },
     // exp 为过期时间1000位1秒 1000*60 为1分钟 1000*60*60 1小时
-    getLocalStorage(key, exp) {
-      const date = Number(localStorage.getItem('Date'))
+    getLocalStorage(key, exp, dateName) {
+      const date = Number(localStorage.getItem(dateName))
       console.log(new Date().getTime() - date)
       if (new Date().getTime() - date < exp) {
         return localStorage.getItem(key)
@@ -37,9 +37,9 @@ export const routerTransitionMode = {
         return false
       }
     },
-    setLocalStorage(key, value, date) {
+    setLocalStorage(key, value, dateName) {
       localStorage.setItem(key, value)
-      localStorage.setItem('Date', date)
+      localStorage.setItem(dateName, new Date().getTime())
     },
     ...mapMutations({
       Set_mode: "SET_PLAY_MODE",
