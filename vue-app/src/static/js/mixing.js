@@ -49,12 +49,16 @@ export const routerTransitionMode = {
 }
 export const jwt = {
   methods: {
-    async verifyJwt (auth) {
-      const url = this.LocationUrl + "/token?user=wxy";
+    async verifyJwt () {
+      const url = this.LocationUrl + "/token";
     let parmas = {
       userName: "222"
     };
-    const data = (await this.axios.get(url)).data;
+    const data = (await this.axios.get(url,{
+      params:{
+        user: 'wxy',
+    }
+    })).data;
     console.log(data);
     return data
     },

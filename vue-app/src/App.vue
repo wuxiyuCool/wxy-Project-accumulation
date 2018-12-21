@@ -10,12 +10,22 @@
 </template>
 
 <script>
+import { routerTransitionMode } from '@/static/js/mixing'
+import axios from 'axios'
 export default {
   name: "app",
+  mixins: [ routerTransitionMode ],
   data() {
     return {
       isxx: true
     };
+  },
+  mounted(){
+    const mykey = this.getLocalStorage('myKey', 1000*60*60)
+    console.info('APP mykey',mykey)
+    if (mykey) {
+      axios.defaults.headers.common['Authorization'] = mykey
+    }
   },
   computed: {
     changeClass() {

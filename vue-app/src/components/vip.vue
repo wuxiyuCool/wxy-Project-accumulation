@@ -27,9 +27,7 @@ export default {
     };
   },
   async mounted() {
-    const myKey = this.getLocalStorage("myKey", 4000);
-    const data = this.verifyJwt(myKey)
-    console.info(myKey);
+    const data = this.verifyJwt()
   },
   methods: {
     touchEnd(e) {
