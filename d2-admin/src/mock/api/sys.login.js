@@ -1,3 +1,4 @@
+// 模拟数据添加root权限
 const userDB = [
   { username: 'admin', password: 'admin', uuid: 'admin-uuid', name: '管理员', root: 'admin' },
   { username: 'editor', password: 'editor', uuid: 'editor-uuid', name: '编辑', root: 'editor' },

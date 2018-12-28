@@ -34,7 +34,7 @@ export default {
             console.log(res)
             util.cookies.set('uuid', res.uuid)
             util.cookies.set('token', res.token)
-            // 设置 vuex 用户信息
+            // 设置 vuex 用户信息获取到的数据要包含root（权限）属性
             await dispatch('d2admin/user/set', {
               name: res.name,
               root: res.root

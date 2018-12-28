@@ -1,6 +1,6 @@
 /* eslint-disable */
 import layoutHeaderAside from '@/layout/header-aside'
-
+// auth为是否进行登录验证的
 const meta = {
     auth: true
 }
@@ -14,6 +14,7 @@ export default {
             name: `${pre}admin`,
             component: () => import('@/pages/matter/newmatter'),
             meta: {
+				// 添加root：xxx来进行权限管理
                 root: 'admin',
                 title: 'admin'
             }

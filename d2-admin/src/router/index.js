@@ -34,15 +34,15 @@ router.beforeEach((to, from, next) => {
     // 请根据自身业务需要修改
     const token = util.cookies.get('token')
     if (token && token !== 'undefined') {
-      // 路由权限验证
+      // 路由权限验证1
       // console.log(to.meta.root)
       // console.log(store.state.d2admin.user.info.root)
       // console.info('1',to.meta.root == store.state.d2admin.user.info.root)
       // 跳转路由是否有权限标识
       if (to.meta.root) {
-        // 获取用户的权限标识不存在即为没有登陆跳转重新登陆
+        // 获取用户的权限标识不存在即为没有登陆跳转重新登陆1
         if (store.state.d2admin.user.info.root) {
-          // 判断路由标识是否正确
+          // 判断路由标识是否正确1
           to.meta.root == store.state.d2admin.user.info.root ?　next() : next({name: '401'})
         } else {
           next({name: 'login'})
