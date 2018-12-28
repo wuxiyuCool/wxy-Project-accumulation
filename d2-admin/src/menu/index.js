@@ -42,11 +42,11 @@ export const menuHeader = [{
     title: '首页',
     icon: 'home',
     children: [
-      // {
-      //   path: '/index',
-      //   title: '首页',
-      //   icon: 'home'
-      // },
+       {
+         path: '/home/index',
+         title: '首页',
+         icon: 'home'
+       },
       test
     //   {
     //   path: '/test/d3-crud',
