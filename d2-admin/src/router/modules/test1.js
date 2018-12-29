@@ -1,6 +1,6 @@
 /* eslint-disable */
 import layoutHeaderAside from '@/layout/header-aside'
-
+// auth为是否进行登录验证的
 const meta = {
     auth: true
 }
