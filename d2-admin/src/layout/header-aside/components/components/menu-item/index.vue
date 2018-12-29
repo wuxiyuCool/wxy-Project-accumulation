@@ -19,21 +19,16 @@ export default {
       default: () => {}
     }
   },
-  // 获取登录用户的信息
    computed: {
     ...mapState('d2admin/user', [
       'info'
     ])
   },
   methods: {
-  // 定义是否显示该入口菜单
     showmenu (menu) {
-	// 判断菜单定义时是否有meta属性
       if (menu.meta) {
-	  // 判断用户权限和菜单定义的权限是否相同不同这不显示
         return this.info.root == menu.meta.root
       } else {
-	  // 没有meta属性时为通用的菜单直接显示
         return true
       }
     }

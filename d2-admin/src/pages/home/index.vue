@@ -1,131 +1,102 @@
 <template>
-  <div
-    class="d2-layout-header-aside-group"
-    :style="styleLayoutMainGroup"
-    :class="{grayMode: grayActive}"
-  >
-    <!-- 半透明遮罩 -->
-    <div class="d2-layout-header-aside-mask"></div>
-    <!-- 主体内容 -->
-    <div class="d2-layout-header-aside-content" flex="dir:top">
-      <!-- 顶栏 -->
-      <div
-        class="d2-theme-header"
-        :style="{
-          opacity: this.searchActive ? 0.5 : 1
-        }"
-        flex-box="0"
-        flex
-      >
-        <div
-          class="logo-group"
-          :style="{width: asideCollapse ? asideWidthCollapse : asideWidth}"
-          flex-box="0"
-        >
-          <img
-            v-if="asideCollapse"
-            :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/icon-only.png`"
-          >
-          <img v-else :src="`${$baseUrl}image/theme/${themeActiveSetting.name}/logo/all.png`">
-        </div>
-        <div class="toggle-aside-btn" @click="handleToggleAside" flex-box="0">
-          <d2-icon name="bars"/>
-        </div>
-        <d2-menu-header flex-box="1"/>
-        <!-- 顶栏右侧 -->
-        <div class="d2-header-right" flex-box="0">
-          <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
-          <d2-header-search @click="handleSearchClick"/>
-          <d2-header-error-log v-if="$env === 'development'"/>
-          <d2-header-fullscreen/>
-          <d2-header-theme/>
-          <d2-header-size/>
-          <d2-header-user/>
+  <transition>
+    <div class="lock-container pull-height">
+      <div class="lock-form animated bounceInDown">
+        <div class="animated">
+          <h3 class="text-white">{{userName.name}}</h3>
+          <el-input placeholder="请输入登录密码" type="password" class="input-with-select" v-model="value">
+            <el-button slot="append" @click="unlock">
+              <d2-icon-svg style="width:25px;height: 25px;" name="unLock"/>
+            </el-button>
+
+            <el-button slot="append" @click="backLogin">
+              <d2-icon-svg style="width:25px;height: 25px;" name="login"/>
+            </el-button>
+          </el-input>
         </div>
       </div>
-      <!-- 下面 主体 -->
-      <transition name="fade-scale">
-        <div v-show="searchActive" class="d2-theme-container-main-layer" flex="dir:top">
-          <d2-panel-search ref="panelSearch" @close="searchPanelClose"/>
-        </div>
-      </transition>
-      <router-view/>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
-import d2MenuSide from "@/layout/header-aside/components/menu-side";
-import d2MenuHeader from "@/layout/header-aside/components/menu-header";
-import d2Tabs from "@/layout/header-aside/components/tabs";
-import d2HeaderFullscreen from "@/layout/header-aside/components/header-fullscreen";
-import d2HeaderSearch from "@/layout/header-aside/components/header-search";
-import d2HeaderSize from "@/layout/header-aside/components/header-size";
-import d2HeaderTheme from "@/layout/header-aside/components/header-theme";
-import d2HeaderUser from "@/layout/header-aside/components/header-user";
-import d2HeaderErrorLog from "@/layout/header-aside/components/header-error-log";
-import { mapState, mapGetters, mapActions } from "vuex";
-import mixinSearch from "@/layout/header-aside/mixins/search";
+import { mapState, mapMutations, mapActions } from "vuex";
 export default {
-  name: "d2-layout-header-aside",
-  mixins: [mixinSearch],
-  components: {
-    d2MenuSide,
-    d2MenuHeader,
-    d2Tabs,
-    d2HeaderFullscreen,
-    d2HeaderSearch,
-    d2HeaderSize,
-    d2HeaderTheme,
-    d2HeaderUser,
-    d2HeaderErrorLog
-  },
+  name: "lock",
   data() {
     return {
-      // [侧边栏宽度] 正常状态
-      asideWidth: "200px",
-      // [侧边栏宽度] 折叠状态
-      asideWidthCollapse: "65px"
+      value: ""
     };
+  },
+  mounted() {
+    this.set(true);
   },
   computed: {
     ...mapState("d2admin", {
-      keepAlive: state => state.page.keepAlive,
-      grayActive: state => state.gray.active,
-      transitionActive: state => state.transition.active,
-      asideCollapse: state => state.menu.asideCollapse
-    }),
-    ...mapGetters("d2admin", {
-      themeActiveSetting: "theme/activeSetting"
-    }),
-    /**
-     * @description 最外层容器的背景图片样式
-     */
-    styleLayoutMainGroup() {
-      return {
-        ...(this.themeActiveSetting.backgroundImage
-          ? {
-              backgroundImage: `url('${this.$baseUrl}${
-                this.themeActiveSetting.backgroundImage
-              }')`
-            }
-          : {})
-      };
-    }
+      lockPassword: state => state.lock.lockPassword,
+      userName: state => state.user.info
+    })
   },
   methods: {
-    ...mapActions("d2admin/menu", ["asideCollapseToggle"]),
-    /**
-     * 接收点击切换侧边栏的按钮
-     */
-    handleToggleAside() {
-      this.asideCollapseToggle();
-    }
+    // 解锁
+    unlock() {
+      if (this.lockPassword == this.value) {
+        this.set(false);
+        this.$router.push({
+          name: "index"
+        });
+      } else {
+        this.$message.error("错了哦，密码输入错误");
+      }
+    },
+    // 不解锁跳转回登录
+    backLogin() {
+         this.$confirm('确定要退出吗？', '提示', {
+          confirmButtonText: '确定',
+          cancelButtonText: '取消',
+          type: 'warning'
+        }).then(() => {
+          this.set(false);
+             this.logout({
+              vm: this,
+              confirm: false
+            })
+        }).catch(() => {
+          this.$message({
+            type: 'info',
+            message: '已取消'
+          });          
+        });
+    },
+    ...mapMutations("d2admin/lock", ["set"]),
+    ...mapActions('d2admin/account', [
+      'logout'
+    ]),
   }
 };
 </script>
 
 <style lang="scss">
-// 注册主题
-@import "~@/assets/style/theme/register.scss";
+.lock-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  position: relative;
+  height: 100%;
+}
+.lock-container::before {
+  z-index: -999;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./img/bg.jpg");
+  background-size: cover;
+}
+.lock-form {
+  width: 300px;
+}
 </style>

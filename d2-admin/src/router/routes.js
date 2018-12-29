@@ -2,7 +2,6 @@ import playground from './modules/playground'
 import frame from './modules/frame'
 import d2Crud from './modules/d2-crud'
 import test from './modules/test'
-//权限测试
 import test1 from './modules/test1'
 import plugins from './modules/plugins'
 import charts from './modules/charts'

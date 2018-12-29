@@ -28,6 +28,7 @@
           <!-- 如果你只想在开发环境显示这个按钮请添加 v-if="$env === 'development'" -->
           <d2-header-search @click="handleSearchClick"/>
           <d2-header-error-log v-if="$env === 'development'"/>
+          <d2-header-lock/>
           <d2-header-fullscreen/>
           <d2-header-theme/>
           <d2-header-size/>
@@ -89,6 +90,7 @@ import d2HeaderSearch from './components/header-search'
 import d2HeaderSize from './components/header-size'
 import d2HeaderTheme from './components/header-theme'
 import d2HeaderUser from './components/header-user'
+import d2HeaderLock from './components/header-lock'
 import d2HeaderErrorLog from './components/header-error-log'
 import { mapState, mapGetters, mapActions } from 'vuex'
 import mixinSearch from './mixins/search'
@@ -106,7 +108,8 @@ export default {
     d2HeaderSize,
     d2HeaderTheme,
     d2HeaderUser,
-    d2HeaderErrorLog
+    d2HeaderErrorLog,
+    d2HeaderLock
   },
   data () {
     return {

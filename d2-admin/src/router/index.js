@@ -28,21 +28,24 @@ router.beforeEach((to, from, next) => {
   NProgress.start()
   // 关闭搜索面板
   store.commit('d2admin/search/set', false)
+  if (store.state.d2admin.lock.active) {
+    return
+  }
   // 验证当前路由所有的匹配中是否需要有登录验证的
   if (to.matched.some(r => r.meta.auth)) {
     // 这里暂时将cookie里是否存有token作为验证是否登录的条件
     // 请根据自身业务需要修改
     const token = util.cookies.get('token')
     if (token && token !== 'undefined') {
-      // 路由权限验证1
+      // 路由权限验证
       // console.log(to.meta.root)
       // console.log(store.state.d2admin.user.info.root)
       // console.info('1',to.meta.root == store.state.d2admin.user.info.root)
       // 跳转路由是否有权限标识
       if (to.meta.root) {
-        // 获取用户的权限标识不存在即为没有登陆跳转重新登陆1
+        // 获取用户的权限标识不存在即为没有登陆跳转重新登陆
         if (store.state.d2admin.user.info.root) {
-          // 判断路由标识是否正确1
+          // 判断路由标识是否正确
           to.meta.root == store.state.d2admin.user.info.root ?　next() : next({name: '401'})
         } else {
           next({name: 'login'})
