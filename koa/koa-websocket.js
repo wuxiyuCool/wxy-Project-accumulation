@@ -11,18 +11,23 @@ app.ws.use(logger())
 app.ws.use(route.all('/', function (params) {
     params.websocket.on('message', function (message) {
         let timeInter1 = '';
-        params.websocket.send(math(message))
-        if (timeInter1 != '') {
-            return
-        }
-        timeInter1 = setInterval(() => {
-            try {
-                params.websocket.send('你有一条新消息')
-            } catch (error) {
-                console.error('发送 失败~！')
-                clearInterval(timeInter1)
-            }
-        }, 10000)
+		if (!isNaN(message)) {
+			params.websocket.send(math(message))
+		} else {
+			params.websocket.send('输入数字开始游戏')
+		}
+        
+        //if (timeInter1 != '') {
+		//return
+        //}
+        //timeInter1 = setInterval(() => {
+         //   try {
+          //      params.websocket.send('你有一条新消息')
+         //   } catch (error) {
+         //       console.error('发送 失败~！')
+         //       clearInterval(timeInter1)
+         //   }
+        //}, 10000)
     })
 }))
 
