@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,maximum-scale=1.0,minimum-scale=1.0,initial-scale=1.0,user-scalable=no" name="viewport">
+    <title>Scrape</title>
+    <style>
+        #myCanvas {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 200px 200px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width=300 height=300></canvas>
+    <script>
+        var canvas = document.getElementById('myCanvas'),
+            ctx = canvas.getContext('2d'),
+            w = canvas.width;
+            h = canvas.height;
+            area = w * h;
+            l = canvas.offsetLeft;
+            t = canvas.offsetTop,
+            img = new Image();
+
+        var randomImg = function(){
+            var random = Math.random();
+            if(random < 0.4){
+                img.src = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=3228632506,1899645960&fm=27&gp=0.jpg';
+            }else if(random > 0.6){
+                img.src = 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2862504260,2852536472&fm=27&gp=0.jpg';
+            }else{
+                img.src = 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3184974538,3197977334&fm=27&gp=0.jpg';
+            }
+        };
+        var bindEvent = function(){
+            canvas.addEventListener('touchmove', moveFunc, false);
+            canvas.addEventListener('touchend', endFunc, false);
+        };
+        var moveFunc = function(e){
+            var touch = e.touches[0],
+                posX = touch.clientX - l,
+                posY = touch.clientY - t;
+            ctx.beginPath();
+            ctx.arc(posX, posY, 30, 0, Math.PI * 2, 0);
+            ctx.fill();
+        };
+        var endFunc = function(e){
+            var data = ctx.getImageData(0, 0, w, h).data,
+                scrapeNum = 0;
+            for(var i = 3, len = data.length; i < len; i += 4){
+                if(data[i] === 0){
+                    scrapeNum++;
+                }
+            }
+            if(scrapeNum > area * 0.45){
+                ctx.clearRect(0, 0, w, h);
+                canvas.removeEventListener('touchmove', moveFunc, false);
+                canvas.removeEventListener('touchend', endFunc, false);
+            }
+        }
+        var init = (function(){
+            ctx.fillStyle = "#ccc";
+            ctx.fillRect(0, 0, w, h);
+            randomImg();            
+            img.addEventListener('load', function(){
+                canvas.style.backgroundImage = 'url(' + img.src +')';
+                ctx.globalCompositeOperation = 'destination-out';
+                bindEvent();
+            });
+        })();
+    </script>
+</body>
+</html>
