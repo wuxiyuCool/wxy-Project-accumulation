@@ -114,10 +114,10 @@
 * UI 库
   * 选哪个？
   	* ant-design
+  	* mintUI
+  	* weUI
   	* material-ui
   	* ice
-   * weUI
-   * mint UI
   * 如何按需打包？
   	* tree-shaking
   	* babel-plugin-import
