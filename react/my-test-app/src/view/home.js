@@ -73,7 +73,10 @@ class Home extends Component {
                             </header>
                             <div className="new-notice">
                                 <ul>
-                                    <li>12121</li>
+                                    <li>
+                                        <div>123</div>
+                                        <div>123</div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

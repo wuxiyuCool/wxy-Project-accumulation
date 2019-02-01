@@ -12,6 +12,7 @@ import Invitate from './view/invitate/invitate'
 import Page from './components/page/page'
 import { Icon } from 'antd';
 import { HashRouter as Router, NavLink, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
 class App extends Component {
   constructor(props) {
     super(props)
@@ -58,6 +59,7 @@ class App extends Component {
     this.setState({
       age: 12
     });
+    console.log(this.props.tiger)
   }
   clickRouter = (name) => {
     this.setState({
@@ -172,7 +174,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/shop" component={Shop} />
               <Route path="/info" component={Info} />
-              <Route path="/invitate" component={Invitate} />
+              <Route path="/invitate" component={Invitate}  />
               <Route path="/my" component={My} />
             </div>
           </Router>
@@ -197,4 +199,5 @@ class App extends Component {
   }
 
 }
+
 export default App;

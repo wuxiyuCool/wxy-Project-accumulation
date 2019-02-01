@@ -6,14 +6,16 @@ import * as serviceWorker from './serviceWorker';
 import { LocaleProvider } from 'antd';
 import "antd/dist/antd.css";
 import zhCN from 'antd/lib/locale-provider/zh_CN';
+import store from './store/store'
+import { Provider } from 'react-redux';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
 import 'pile-ui/dist/styles/pile.min.css'
 
 moment.locale('zh-cn');
 class Index extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       number: [1, 3, 45, 7, 57, 8],
       name: 'wxy'
@@ -26,11 +28,16 @@ class Index extends Component {
     })
     // console.info('index-value',this.state.name)
   }
+  componentDidMount() {
+    console.log(store.getState())
+  }
   render() {
     return (
+      <Provider store={store}>
         <LocaleProvider locale={zhCN}>
-          <App name={this.state.name} number={this.state.number} onChangeTestValue={this.handleChangeValue} />
+          <App  name={this.state.name} number={this.state.number} onChangeTestValue={this.handleChangeValue} />
         </LocaleProvider>
+      </Provider>
     );
   }
 }
