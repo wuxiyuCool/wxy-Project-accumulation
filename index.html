@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>websocket</title>
+	<link rel="stylesheet" href="https://unpkg.com/nprogress@0.2.0/nprogress.css">
+    <script src="http://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+	<!-- <script src="https://cdn.bootcss.com/progressbar.js/1.0.1/progressbar.js"></script> -->
+    <script src="https://unpkg.com/nprogress@0.2.0/nprogress.js"></script>
+    <script src="./socket.io.js"></script>
+	
+</head><style>
+#pl::-webkit-outer-spin-button,
+#pl::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+ 
+#pl[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<body>
+    <input type="number" id="pl" />
+    <input type="button" value="发送" id="submit" />
+    <input type="button" value="关闭" id="close" />
+    <p id="msg">
+            \n\n\n习近平和巴拿马总统共同参观巴拿马运河新船闸\n
+    </p>
+    <!-- <form action="http://127.0.0.1:8877/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" id="file" value="" multiple="multiple"/>
+
+        <input type="submit" value="ok"/>
+    </form> -->
+</body>
+<script type="text/javascript">
+    // 很重要 必须写，判断浏览器是否支持websocket
+    // $.ajax({
+    //     url: 'http://127.0.0.1:8081',
+    //     dataType: 'json',
+    //     type:'get',
+    //     success: (e) => {
+    //         console.log(e)
+    //     },
+    // })
+	NProgress.start();
+	setTimeout( () => {
+		NProgress.done()
+	}, 10000)
+    var CreateWebSocket = (function () {
+        return function (urlValue) {
+            if (window.WebSocket) return new WebSocket(urlValue);
+            if (window.MozWebSocket) return new MozWebSocket(urlValue);
+            return false;
+        }
+    })()
+    // 实例化websoscket websocket有两种协议ws(不加密)和wss(加密)
+    var msg = document.getElementById("msg")
+    var webSocket = io("ws://127.0.0.1:8081");
+    // webSocket.onopen = function (evt) {
+        // 一旦连接成功，就发送第一条数据
+        //  webSocket.send("第一条数据")
+        // alert('‘链接成功’')
+    // }
+    // webSocket.onmessage = function (evt) {
+    //     // 这是服务端返回的数据
+    //     console.log("服务端说" + evt.data)
+    //     alert("服务端说" + evt.data)
+    // }
+    webSocket.on('getMsg', data => {
+        console.log('服务端消息：',  data);
+        msg.innerHTML = `${data} <br/>`;
+    })
+    webSocket.on('login', data => {
+        console.log('login',  data);
+    })
+    // // 关闭连接
+    // webSocket.onclose = function (evt) {
+    //     console.log("Connection closed.")
+    // }
+    // input事件发送数据
+
+    document.getElementById("submit").onclick = function () {
+        var str = document.getElementById("pl").value
+        // webSocket.send(str)
+        webSocket.emit('send', str);
+    }
+    document.getElementById("close").onclick = function () {
+
+        webSocket.onclose()
+    }
+</script>
+
+</html>
