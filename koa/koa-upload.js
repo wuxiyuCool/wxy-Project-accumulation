@@ -33,14 +33,18 @@ var upload = multer({
 
 router.post('/upload',upload.single('file'),async(ctx,next)=>{
   console.log('abc')
-  ctx.set('Access-Control-Allow-Origin', '*')
-  ctx.body = await {
+//   ctx.set('Access-Control-Allow-Origin', '*')
+  ctx.body = {
       code: 200,
       msg: 'sucecss',
       filename: ctx.req.file.filename//返回文件名
   }
+  next()
 })
-
+app.use(async (ctx,next) => {
+    ctx.set('Access-Control-Allow-Origin', '*')
+    await next()
+}) 
 app.use(router.routes(), router.allowedMethods())
 //路由
 //  app.use()
